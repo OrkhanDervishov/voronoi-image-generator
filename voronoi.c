@@ -144,7 +144,7 @@ int main(int argc, char* argv[]){
     if(argc > 5) seed = atoi(argv[5]);
 
     printf("distance formula:%s count:%d width:%d height:%d seed:%d\n", 
-        type ? "Euclidian" : "Manhattan",
+        type ? "Manhattan" : "Euclidian",
         point_count, 
         width, 
         height, 
