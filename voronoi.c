@@ -16,7 +16,7 @@
 
 
 typedef enum{
-    EUCLIDIAN = 0,
+    EUCLIDEAN = 0,
     MANHATTAN = 1,
 } DistanceType;
 
@@ -91,7 +91,7 @@ void drawPoints(Image* img, Point* pArray, int count, Color color){
     }
 }
 
-#define EUCLIDIAN_DISTANCE(x0, y0, x1, y1) (x1-x0)*(x1-x0)*100 + (y1-y0)*(y1-y0)*100  
+#define EUCLIDEAN_DISTANCE(x0, y0, x1, y1) (x1-x0)*(x1-x0)*100 + (y1-y0)*(y1-y0)*100  
 #define MANHATTAN_DISTANCE(x0, y0, x1, y1) abs(x1-x0) + abs(y1-y0)
 
 void voronoiColoring(Image* img, Point* pArray, int count, DistanceType type){
@@ -105,8 +105,8 @@ void voronoiColoring(Image* img, Point* pArray, int count, DistanceType type){
         for(int k = 0; k < count; k++){
             Point p = pArray[k];
             int distance;
-            if(type == EUCLIDIAN)
-                distance = EUCLIDIAN_DISTANCE(j, i, p.x, p.y);
+            if(type == EUCLIDEAN)
+                distance = EUCLIDEAN_DISTANCE(j, i, p.x, p.y);
             else if(type == MANHATTAN)
                 distance = MANHATTAN_DISTANCE(j, i, p.x, p.y);
             if(distance < minDistance){
@@ -130,7 +130,7 @@ void voronoiColoring(Image* img, Point* pArray, int count, DistanceType type){
 int main(int argc, char* argv[]){
 
     // Default inputs
-    DistanceType type = EUCLIDIAN;
+    DistanceType type = EUCLIDEAN;
     int point_count = POINT_COUNT;
     int width = DEFAULT_IMAGE_WIDTH;
     int height = DEFAULT_IMAGE_HEIGHT;
@@ -144,7 +144,7 @@ int main(int argc, char* argv[]){
     if(argc > 5) seed = atoi(argv[5]);
 
     printf("distance formula:%s count:%d width:%d height:%d seed:%d\n", 
-        type ? "Manhattan" : "Euclidian",
+        type ? "Manhattan" : "Euclidean",
         point_count, 
         width, 
         height, 

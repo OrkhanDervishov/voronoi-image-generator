@@ -1,7 +1,7 @@
 # Voronoi Image Generator
 
-<h4>Voronoi diagram with Euler distance formula</h4>
-<img src="images/voronoi-euclidian.png">
+<h4>Voronoi diagram with Euclidean distance formula</h4>
+<img src="images/voronoi-euclidean.png">
 <h4>Voronoi diagram with Manhattan distance formula</h4>
 <img src="images/voronoi-manhattan.png">
 
@@ -12,11 +12,10 @@ Delaunay triangulation algorithm for more interesting voronoi diagrams.
 --------------
 <h3>Build</h3>
 
-
 <h4>Windows</h4>
 
 Run with default inputs: 
-Euclidian, 1920x1080 resolution and 500 points 
+Euclidean, 1920x1080 resolution and 500 points 
 
 ```
 make run
@@ -24,7 +23,7 @@ make run
 or
 ```
 make build
-./build <distance formula(0-euclidian, 1-manhattan)> <image width> <image height> <number of points> <seed for random generator>
+./build <distance formula(0-euclidean, 1-manhattan)> <image width> <image height> <number of points> <seed for random generator>
 ```
 
 <h4>Linux</h4>
@@ -36,5 +35,5 @@ make run
 or
 ```
 make build
-./build <distance formula(0-euclidian, 1-manhattan)> <image width> <image height> <number of points> <seed for random generator>
+./build <distance formula(0-euclidean, 1-manhattan)> <image width> <image height> <number of points> <seed for random generator>
 ```
