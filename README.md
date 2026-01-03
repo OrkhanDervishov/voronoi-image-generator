@@ -23,7 +23,7 @@ make run
 or
 ```
 make build
-./build <distance formula(0-euclidean, 1-manhattan)> <image width> <image height> <number of points> <seed for random generator>
+./build <distance formula(0-euclidean, 1-manhattan)> <paint points(0-no, 1-yes)> <image width> <image height> <number of points> <seed for random generator>
 ```
 
 <h4>Linux</h4>
@@ -35,5 +35,5 @@ make run
 or
 ```
 make build
-./build <distance formula(0-euclidean, 1-manhattan)> <image width> <image height> <number of points> <seed for random generator>
+./build <distance formula(0-euclidean, 1-manhattan)> <paint points(0-no, 1-yes)> <image width> <image height> <number of points> <seed for random generator>
 ```

@@ -131,6 +131,7 @@ int main(int argc, char* argv[]){
 
     // Default inputs
     DistanceType type = EUCLIDEAN;
+    int draw_points = 0;
     int point_count = POINT_COUNT;
     int width = DEFAULT_IMAGE_WIDTH;
     int height = DEFAULT_IMAGE_HEIGHT;
@@ -138,13 +139,15 @@ int main(int argc, char* argv[]){
 
     // User inputs
     if(argc > 1) type = atoi(argv[1]);
-    if(argc > 2) point_count = atoi(argv[2]);
-    if(argc > 3) width = atoi(argv[3]);
-    if(argc > 4) height = atoi(argv[4]);
-    if(argc > 5) seed = atoi(argv[5]);
+    if(argc > 2) draw_points = atoi(argv[2]);
+    if(argc > 3) point_count = atoi(argv[3]);
+    if(argc > 4) width = atoi(argv[4]);
+    if(argc > 5) height = atoi(argv[5]);
+    if(argc > 6) seed = atoi(argv[6]);
 
-    printf("distance formula:%s count:%d width:%d height:%d seed:%d\n", 
+    printf("distance-formula:%s draw-points:%s count:%d width:%d height:%d seed:%d\n", 
         type ? "Manhattan" : "Euclidean",
+        draw_points ? "Yes" : "No",
         point_count, 
         width, 
         height, 
@@ -166,7 +169,8 @@ int main(int argc, char* argv[]){
 
     generateRandomPoints(pArray, point_count, img.width, img.height);
     voronoiColoring(&img, pArray, point_count, type);
-    drawPoints(&img, pArray, point_count, c);
+    if(draw_points)
+        drawPoints(&img, pArray, point_count, c);
 
     free(pArray);
 #endif
